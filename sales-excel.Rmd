@@ -1,6 +1,6 @@
 ---
 title: "Sales"
-author: "Naomi Ekas"
+author: "Jieming Xiao"
 output: github_document
 ---
 
@@ -16,7 +16,8 @@ knitr::include_graphics("images/sales-1.png")
 ```
 
 ```{r}
-
+sales <- read_excel("data-raw/sales.xlsx")
+sales
 ```
 
 -   **Stretch goal:** Manipulate the sales data such such that it looks like the following.

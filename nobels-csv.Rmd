@@ -15,19 +15,31 @@ nobel <- read.csv("data-raw/nobel.csv")
 ```
 
 Then let's split the data into two:
+```{r}
+nobel %>%
+  group_by(category)
+```
 
 ```{r label-me2, eval=FALSE}
 # stem laureates
-___ <- nobel %>%
-  filter(___)
+nobel_stem <- nobel %>%
+  filter(category %in% c("Physics", "Chemistry", "Medicine", "Economics")) 
 
-# non-steam laureates
-___ <- nobel %>%
-  filter(___)
+
+
+```
+```{r}
+nobel_non_stem <- nobel %>%
+  filter(category %!in% c("Physics", "Chemistry", "Medicine", "Economics"))
+```
+```{r}
+`%!in%` = Negate(`%in%`)
 ```
 
 And finally write out the data:
 
 ```{r label-me3}
 # add code for writing out the two data frames here
+write_csv(nobel_stem, file = "data/nobel_stem.csv")
+write_csv(nobel_non_stem, file = "data/nobel_non_stem.csv")
 ```
