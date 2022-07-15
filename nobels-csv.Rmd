@@ -1,6 +1,6 @@
 ---
 title: "Nobel winners"
-author: "Naomi Ekas"
+author: "Jieming Xiao"
 output: github_document
 ---
 
@@ -11,7 +11,7 @@ library(tidyverse)
 Let's first load the data:
 
 ```{r label-me1, eval=FALSE}
-nobel <- ___(___)
+nobel <- read.csv("data-raw/nobel.csv")
 ```
 
 Then let's split the data into two:
